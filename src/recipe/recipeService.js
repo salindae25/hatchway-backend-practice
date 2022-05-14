@@ -21,8 +21,15 @@ const addRecipe = async (recipe) => {
   if (recipeInDb) throw new RecipeException();
   await Recipe.get('recipes').push(recipe).write();
 };
+const updateRecipe = (recipe) => {
+  const recipeInDb = Recipe.get('recipes').find({ name: recipe?.name });
+  if (!recipeInDb.value())
+    throw new RecipeException('Recipe does not exist', 404);
+  recipeInDb.assign({ ...recipe }).write();
+};
 module.exports = {
   getRecipeName,
   getRecipeDetail,
   addRecipe,
+  updateRecipe,
 };

@@ -25,7 +25,13 @@ router.get('/recipes/details/:name', async (req, res) => {
 });
 
 router.put('/recipes', (req, res) => {
-  return res.status(204).send();
+  try {
+    if (!req.body || req.body == {}) return res.status(204).send();
+    RecipeService.updateRecipe(req.body);
+    return res.status(204).send();
+  } catch (err) {
+    return res.status(err.code).send({ error: err.message });
+  }
 });
 
 module.exports = router;
