@@ -1,0 +1,61 @@
+{
+  "name": "hatchway-backend-practice",
+  "version": "1.0.0",
+  "description": "hatchway practice backend",
+  "main": "server.js",
+  "scripts": {
+    "start":"nodemon .",
+    "test": "jest --watch"
+  },
+  "keywords": [
+    "hatchway",
+    "backend"
+  ],
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "jest-watch-typeahead": "^1.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.1",
+    "supertest": "^6.2.2"
+  },
+  "author": "salinda <salindae25@gmail.com>",
+  "license": "MIT",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "eqeqeq": "warn",
+      "prettier/prettier": "warn"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 80
+  },
+  "jest": {
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "verbose": true
+  }
+}
