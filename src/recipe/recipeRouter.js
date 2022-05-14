@@ -7,4 +7,11 @@ router.get('/recipes', (req, res) => {
   return res.send({ recipeNames });
 });
 
+router.get('/recipes/details/:name', (req, res) => {
+  const name = req.params.name;
+  const details = RecipeService.getRecipeDetail(name);
+  if (!details) return res.send({});
+  return res.send({ details });
+});
+
 module.exports = router;
