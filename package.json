@@ -4,15 +4,16 @@
   "description": "hatchway practice backend",
   "main": "server.js",
   "scripts": {
-    "start":"nodemon .",
-    "test": "jest --watch"
+    "start": "nodemon .",
+    "test": "jest"
   },
   "keywords": [
     "hatchway",
     "backend"
   ],
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "lowdb": "1.0.0"
   },
   "devDependencies": {
     "eslint": "^8.12.0",

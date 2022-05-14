@@ -4,6 +4,7 @@ const app = require('../src/app');
 const getDetails = (name = 'garlicPasta') => {
   return request(app).get('/recipes/details/' + name);
 };
+
 describe('Recipe Detail with preparation', () => {
   it('returns 200 ok when request send', async () => {
     const response = await await getDetails().send();
